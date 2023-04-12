@@ -18,6 +18,6 @@ feature extraction - Using GLCM extracting features from the segemented images
 
 KNN - Implements KNN from scratch using the csv file where the features are stored from the previous feature extraction file
 
-The objective of this project was to understand the working of the algorithms in deapth rather than achieving a high accuracy. Hence simple architecture has been used in this case. An accuracy of 75% was achieved with both algorithms. 
+The objective of this project was to understand the working of the algorithms in depth rather than achieving a high accuracy. Hence simple architecture has been used in this case. An accuracy of 75% was achieved with both algorithms. 
 
 However, according to several research articles an accuracy of upto 98% has been achieved using CNN if the right architecture is used. 
