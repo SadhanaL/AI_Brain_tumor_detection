@@ -1,0 +1,15 @@
+# Python Artifacts
+__pycache__/
+
+# Virtual Environments 
+.venv/
+
+# Model Weights & Large Data 
+model.npz
+
+# Local Data Directories
+data/augmented_results/
+data/resized_results/
+data/segmentation_results/
+data/train_val/
+data/raw/
