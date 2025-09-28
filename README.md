@@ -23,20 +23,20 @@ This project provides a FastAPI application that classifies images as **tumor** 
 1. **Prepare the data**  
    Place your raw training images inside the folder: data/train_val
 
-2. **Run training**  
+2. **Run the API**  
+Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run training**  
 From the project root, execute:
 
 ```bash
 python main.py
 ```
-
 This will train the model and save it to model.npz (or whatever path is configured in config.py.
 
-3. **Run the API**  
-Install dependencies
-```bash
-pip install -r requirements.txt
-```
 4. **Start the FastAPI server** 
 ```bash
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
