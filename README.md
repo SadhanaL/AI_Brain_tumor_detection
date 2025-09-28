@@ -30,7 +30,7 @@ From the project root, execute:
 python main.py
 ```
 
-This will train the model and save it to model.npz (or whatever path is configured in config.py).
+This will train the model and save it to model.npz (or whatever path is configured in config.py.
 
 3. **Run the API**  
 Install dependencies
