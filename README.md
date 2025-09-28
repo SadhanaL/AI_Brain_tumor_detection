@@ -31,7 +31,6 @@ pip install -r requirements.txt
 
 3. **Run training**  
 From the project root, execute:
-
 ```bash
 python main.py
 ```
@@ -41,8 +40,10 @@ This will train the model and save it to model.npz (or whatever path is configur
 ```bash
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
+
 5. **Go to Swagger UI**
 ```bash
 http://127.0.0.1:8000/docs
 ```
-Upload a test image and get a classification :) 
+
+6. **Upload a test image and get a classification :)**
