@@ -1,23 +1,48 @@
 # AI_Brain_tumor_detection
-Brain tumor segmentation and detection from MRI images using CNN and KNN algorithms implemented from scratch
+Brain tumor segmentation and detection from MRI images using CNN algorithm implemented from scratch
 
 ---------------
 The dataset was obtained from kaggle computer vision with a limited MRIs of 155 with tumor and 98 without tumor images. The dataset can be found here: https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection/code
 
-Augmented_PIL_trial - Performs augmentation of the dataset using flip and rotate in the pillow package
+utils.py - Performs Segmentation of tumor (ROI), augmentation of the dataset using flip and rotate in the pillow package and resizes the images to the EXPECTED_SIZE given in the config.py
 
-processed_img(1) - Segmentation of tumor (ROI)
+CNNetwork.py - Implemetation of CNN from scratch (Conv, max pool, linear, softmax)
 
-resize_and_padded - Images are resized to 20x20 and padded if required
+main.py - Main of CNN where the raw data is loaded, preprocessed, trained and validated
 
-CNNetwork - Implemetation of CNN from scratch
+app.py - Defines a FastAPI application with a /predict endpoint that accepts an uploaded image, runs model inference, and returns the classification result (tumor or not tumor).
 
-main - main of CNN
+# 🧠 Tumor Detection API
 
-feature extraction - Using GLCM extracting features from the segemented images
+This project provides a FastAPI application that classifies images as **tumor** or **no tumor** using a trained CNN model.
 
-KNN - Implements KNN from scratch using the csv file where the features are stored from the previous feature extraction file
+---
 
-The objective of this project was to understand the working of the algorithms in depth rather than achieving a high accuracy. Hence simple architecture has been used in this case. An accuracy of 75% was achieved with both algorithms. 
+## 🏋️‍♂️ Training the Model
 
-However, according to several research articles an accuracy of upto 98% has been achieved using CNN if the right architecture is used. 
+1. **Prepare the data**  
+   Place your raw training images inside the folder: data/train_val
+
+2. **Run training**  
+From the project root, execute:
+
+```bash
+python main.py
+```
+
+This will train the model and save it to model.npz (or whatever path is configured in config.py).
+
+3. **Run the API**  
+Install dependencies
+```bash
+pip install -r requirements.txt
+```
+4. **Start the FastAPI server** 
+```bash
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+5. **Go to Swagger UI**
+```bash
+http://127.0.0.1:8000/docs
+```
+Upload a test image and get a classification :) 
